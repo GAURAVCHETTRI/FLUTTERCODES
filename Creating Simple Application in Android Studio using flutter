@@ -1,0 +1,50 @@
+#1 Open Android Studio
+#2 Create Flutter Project. For this, click File → New → New Flutter Project
+#3 Select Flutter Application. For this, select Flutter Application and click Next.
+#4  Configure the application as below and click Next.
+    Project name: sample_app
+    Flutter SDK Path: <path_to_flutter_sdk>
+    Project Location: <path_to_project_folder>
+    Description: Flutter sample application 
+
+#5 Configure Project.
+   Set the company domain as flutterapp.tutorialspoint.com and click Finish.
+#6  Enter Company domain
+#7  Replace the dart code in the lib/main.dart file with the below code −
+
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+   // This widget is the root of your application.
+   @override
+   Widget build(BuildContext context) {
+      return MaterialApp(
+         title: 'sample_application',
+         theme: ThemeData(
+            primarySwatch: Colors.blue,
+         ),
+         home: MyHomePage(title: 'Home page'),
+      );
+   }
+}
+class MyHomePage extends StatelessWidget {
+   MyHomePage({Key key, this.title}) : super(key: key);
+   final String title;
+
+   @override
+   Widget build(BuildContext context) {
+      return Scaffold(
+         appBar: AppBar(
+            title: Text(this.title),
+         ),
+         body: Center(
+            child:
+            Text(
+               'sample app'
+            )
+         ),
+      );
+   }
+}
